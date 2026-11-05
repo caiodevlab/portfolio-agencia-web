@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você Já Sobreviu Aqui a Hora Exata? - Radar de Viagens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fadeInUp 0.8s ease forwards; }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        section > div > p { display: none; }
+    </style>
+</head>
+<body class="bg-slate-950 text-white">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="bg-emerald-500 text-white px-4 py-1 rounded-full text-sm font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-bolt"></i> Viagens em <span class="text-emerald-400">Mil Segundos</span>
+                </span>
+                <a href="#subscribe" class="hidden md:flex items-center gap-2 bg-slate-900 hover:bg-emerald-600 px-6 py-2 rounded-xl text-white transition">
+                    Viagens em minutos por e-mail
+                </a>
+            </div>
+            <a href="https://wa.me/5530999999999" target="_blank" class="md:hidden bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl text-sm shadow-lg">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Obter Simulador Gratuito
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero + Call to Action Central -->
+    <section class="min-h-screen flex items-center pt-20">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="relative z-10">
+                <div class="inline-block bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full mb-6 animate-fade-up">
+                    <i class="fa-solid fa-clock mr-1"></i> Agora é o momento
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8 animate-fade-up delay-100">
+                    Se você está pensando <br> em sair daqui <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">aqui agora</span>, <br>
+                    <span class="text-white">essa página foi criada EXATAMENTE</span> para você.
+                </h1>
+                <p class="text-xl text-slate-300 max-w-2xl leading-relaxed animate-fade-up delay-200">
+                    Encontramos seu destino para grupos de 20 a 30 pessoas que precisam viajar rápido — organizando viagens de São Paulo e Brasília para o Rio de Janeiro, com voo direto, hospedagem aprovada e guia local.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
+                    <a href="https://wa.me/5530999999999" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-10 py-6 rounded-2xl text-lg shadow-xl shadow-emerald-500/30 transition flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Pegue meu orçamento grátis
+                    </a>
+                    <button onclick="document.getElementById('subscribe').scrollIntoView({behavior:'smooth'})" class="hidden md:block border border-emerald-500/50 text-emerald-400 font-semibold px-10 py-6 rounded-2xl transition">
+                        Obter ajuda gratuita
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats & Data -->
+    <section class="py-10 px-6 md:py-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="text-center">
+                <p class="text-3xl font-bold text-emerald-400">5K+</p>
+                <p class="text-sm text-slate-400">Clientes todos os meses</p>
+            </div>
+            <div class="text-center">
+                <p class="text-3xl font-bold text-emerald-400">20 min</p>
+                <p class="text-sm text-slate-400">Transição instantânea</p>
+            </div>
+            <div class="text-center">
+                <p class="text-3xl font-bold text-emerald-400">100%</p>
+                <p class="text-sm text-slate-400">Gastos otimizados</p>
+            </div>
+            <div class="text-center">
+                <p class="text-3xl font-bold text-emerald-400">Srta. Clarice</p>
+                <p class="text-sm text-slate-400">Curitiba, 42 anos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="subscribe" class="bg-gradient-to-r from-emerald-950/30 to-slate-950 py-12 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="overflow-hidden">
+                <div class="bg-slate-900 border-y border-slate-800 py-8 grid md:grid-cols-3 gap-8">
+                    <div class="text-center md:text-left">
+                        <div class="w-12 h-12 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-vial text-emerald-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Encontre o site ideal</h3>
+                        <p class="text-slate-400 text-sm mt-1">Mapeamos suas necessidades do dia a dia, perguntas mais frequentes e oferecemos negócios incríveis.</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <div class="w-12 h-12 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-list-check text-emerald-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Sucesso do cliente</h3>
+                        <p class="text-slate-400 text-sm mt-1">Planejamos metas inteligentes com base nas preferências e hábitos acessíveis do cotidiano.</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <div class="w-12 h-12 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-gavel text-emerald-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Entrega no prazo</h3>
+                        <p class="text-slate-400 text-sm mt-1">Geramos todos os calendários necessários e atendemos as expectativas de todos os participantes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-10 px-6 md:py-14">
+        <div class="max-w-2xl mx-auto overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1506905925346-21b3cee2cb34?auto=format&fit=crop&q=80&w=700" alt="Clientes felizes" class="rounded-2xl w-full h-[320px] object-cover">
+            <div class="bg-slate-900 p-4">
+                <p class="text-slate-300 text-sm">
+                    "Dez vezes mais difícil descobrir o que considerar essencial do que ouvir ao nosso dispositivo favorito com essas informações incrivelmente claras. O pacote perfeito que resume este insight incrível no texto!"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final Modal for WhatsApp -->
+    <footer class="bg-slate-900 text-center py-8 text-sm text-slate-500">
+        <p>Feedbacks não vão ao Whatsapp - Página criada com padrão comercial avançado</p>
+    </footer>
+</body>
+</html>

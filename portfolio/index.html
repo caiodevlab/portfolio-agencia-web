@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Web & Digital — Soluções Web de Alta Performance para Empresas e Criadores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade { animation: fadeIn 0.8s ease forwards; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+    
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                    <i class="fa-solid fa-cube text-white text-lg"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white">Nexus<span class="text-cyan-400">Digital</span></span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#portfolio" class="hover:text-cyan-400 transition">Portfólio</a>
+                <a href="#servicos" class="hover:text-cyan-400 transition">Serviços</a>
+                <a href="#diferenciais" class="hover:text-cyan-400 transition">Por Que Nós</a>
+                <a href="#processo" class="hover:text-cyan-400 transition">Como Trabalhamos</a>
+            </nav>
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20projeto%20web." target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-5 py-2.5 rounded-xl text-sm shadow-lg shadow-cyan-500/20 transition flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Orçamento Direto
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-36 pb-24 md:pt-48 md:pb-36 relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10 animate-fade">
+            <span class="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+                <i class="fa-solid fa-bolt"></i> Agência de Desenvolvimento Web & Alta Conversão
+            </span>
+            <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+                Transformamos sua presença digital em uma <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">máquina de vendas</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mt-6 leading-relaxed">
+                Desenvolvemos sites institucionais, landing pages de alta conversão, portfólios e páginas de vendas com design premium, velocidade extrema e foco em resultados reais para empresas e criadores.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#portfolio" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-xl shadow-cyan-500/20 transition">
+                    Ver Portfólio de Projetos
+                </a>
+                <a href="https://wa.me/5511999999999?text=Olá!%20Quero%20conversar%20sobre%20um%20projeto." target="_blank" class="border border-slate-700 hover:border-slate-500 text-slate-200 font-semibold px-8 py-4 rounded-xl transition flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-emerald-400"></i> Falar com Especialista
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Showcase Grid -->
+    <section id="portfolio" class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Nossos Trabalhos em Destaque</h2>
+                <p class="text-slate-400 mt-4">Soluções desenvolvidas sob medida para diferentes segmentos comerciais e digitais.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Projeto 1: Solaris -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-cyan-500/50 transition">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=600" alt="Solaris Engenharia" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-amber-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full">Engenharia & Serviços</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-white">Solaris Engenharia</h3>
+                        <p class="text-slate-400 text-sm">Site institucional completo para empresa de energia solar, com calculadora de economia e foco em conversão b2b.</p>
+                        <div class="pt-2 flex items-center justify-between text-xs text-slate-500">
+                            <span>HTML5 / Tailwind</span>
+                            <a href="../projetos/institucional-solar/index.html" target="_blank" class="text-cyan-400 hover:underline font-medium">Ver Demonstração &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2: Radar de Viagens -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-cyan-500/50 transition">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21b3cee2cb34?auto=format&fit=crop&q=80&w=600" alt="Radar de Viagens" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">Landing Page / Leads</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-white">Radar de Viagens</h3>
+                        <p class="text-slate-400 text-sm">Landing page de alta conversão para captura de leads e direcionamento rápido para atendimento via WhatsApp.</p>
+                        <div class="pt-2 flex items-center justify-between text-xs text-slate-500">
+                            <span>Alta Conversão</span>
+                            <a href="../projetos/landing-whatsapp-viagens/index.html" target="_blank" class="text-cyan-400 hover:underline font-medium">Ver Demonstração &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3: Python Master -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-cyan-500/50 transition">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600" alt="Python Master" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">Infoprodutos / Vendas</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-white">Python Master Comercial</h3>
+                        <p class="text-slate-400 text-sm">Página de vendas profissional para cursos e mentorias online, estruturada para conversão de infoprodutores.</p>
+                        <div class="pt-2 flex items-center justify-between text-xs text-slate-500">
+                            <span>Copywriting & Checkout</span>
+                            <a href="../projetos/vendas-infoproduto/index.html" target="_blank" class="text-cyan-400 hover:underline font-medium">Ver Demonstração &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">O Que Nós Oferecemos</h2>
+                <p class="text-slate-400 mt-4">Soluções completas para empresas, profissionais liberais e criadores digitais.</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">01</div>
+                    <h3 class="text-lg font-bold text-white">Landing Pages</h3>
+                    <p class="text-slate-400 text-sm">Focadas em conversão direta, tráfego pago e captura de leads para WhatsApp.</p>
+                </div>
+                <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">02</div>
+                    <h3 class="text-lg font-bold text-white">Sites Institucionais</h3>
+                    <p class="text-slate-400 text-sm">Presença digital sólida para empresas transmitirem autoridade e confiança.</p>
+                </div>
+                <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">03</div>
+                    <h3 class="text-lg font-bold text-white">Páginas de Vendas</h3>
+                    <p class="text-slate-400 text-sm">Estruturas completas para infoprodutos, cursos, mentorias e eventos.</p>
+                </div>
+                <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">04</div>
+                    <h3 class="text-lg font-bold text-white">Terceirização Dev</h3>
+                    <p class="text-slate-400 text-sm">Parceria com agências de marketing que precisam de braço técnico ágil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-12 border-t border-slate-800 text-center text-sm text-slate-500">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Nexus Web & Digital. Todos os direitos reservados.</p>
+            <a href="https://wa.me/5511999999999" target="_blank" class="text-cyan-400 hover:underline">Fale Conosco via WhatsApp</a>
+        </div>
+    </footer>
+</body>
+</html>
