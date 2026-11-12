@@ -14,12 +14,12 @@ export function initSpaceBackground() {
     container.style.height = '100vh';
     container.style.zIndex = '-1';
     container.style.pointerEvents = 'none';
-    container.style.opacity = '0.85';
+    container.style.opacity = '0.9';
     document.body.prepend(container);
 
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x030712, 0.002);
+    scene.fog = new THREE.FogExp2(0x030712, 0.0018);
 
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 15;
@@ -28,37 +28,40 @@ export function initSpaceBackground() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.2;
+    renderer.toneMappingExposure = 1.3;
     container.appendChild(renderer.domElement);
 
-    // Cinematic Lighting
-    const ambientLight = new THREE.AmbientLight(0x111827, 0.8);
+    // Cinematic Orange-Red / Crimson Space Lighting
+    const ambientLight = new THREE.AmbientLight(0x1a0f0a, 1.2);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0x38bdf8, 2.5);
-    directionalLight.position.set(20, 10, 15);
-    scene.add(directionalLight);
+    // Warm orange-red sun/rim light on the moon
+    const sunLight = new THREE.DirectionalLight(0xff5722, 3.2);
+    sunLight.position.set(25, 12, 20);
+    scene.add(sunLight);
 
-    const rimLight = new THREE.DirectionalLight(0x6366f1, 1.5);
-    rimLight.position.set(-20, -10, -10);
-    scene.add(rimLight);
+    // Cool cyan fill light for contrast (Studio balance)
+    const fillLight = new THREE.DirectionalLight(0x06b6d4, 1.8);
+    fillLight.position.set(-20, -10, -10);
+    scene.add(fillLight);
 
-    // Create Procedural Realistic Moon
-    const moonGeometry = new THREE.SphereGeometry(4.5, 64, 64);
+    // Create High-Detail Procedural Moon with Cinematic Orange-Red Tone
+    const moonGeometry = new THREE.SphereGeometry(4.8, 128, 128);
     
-    // Custom shader material for cinematic lunar appearance with displacement/craters feel
     const moonMaterial = new THREE.MeshStandardMaterial({
-        color: 0x94a3b8,
-        roughness: 0.85,
-        metalness: 0.1,
-        bumpScale: 0.05,
+        color: 0xff7043, // Warm vibrant orange-red base tint
+        emissive: 0x3d1400,
+        emissiveIntensity: 0.3,
+        roughness: 0.75,
+        metalness: 0.2,
+        bumpScale: 0.08
     });
 
-    // Load lunar texture if available or use high-end procedural look
     const textureLoader = new THREE.TextureLoader();
     textureLoader.load(
-        'https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?auto=format&fit=crop&q=80&w=1024',
+        'https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?auto=format&fit=crop&q=80&w=1536',
         (texture) => {
+            texture.anisotropy = 16;
             moonMaterial.map = texture;
             moonMaterial.needsUpdate = true;
         },
@@ -69,22 +72,52 @@ export function initSpaceBackground() {
     );
 
     const moon = new THREE.Mesh(moonGeometry, moonMaterial);
-    // Position moon to the right side of the hero section for a magnificent composition
-    moon.position.set(6, 1, -2);
+    moon.position.set(6.5, 0.8, -3);
     scene.add(moon);
 
-    // Starfield Particles
-    const particlesCount = 1200;
+    // Atmospheric Orange Glow Halo around the moon
+    const haloGeometry = new THREE.SphereGeometry(5.2, 64, 64);
+    const haloMaterial = new THREE.ShaderMaterial({
+        vertexShader: `
+            varying vec3 vNormal;
+            void main() {
+                vNormal = normalize(normalMatrix * normal);
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+        `,
+        fragmentShader: `
+            varying vec3 vNormal;
+            void main() {
+                float intensity = pow(0.6 - dot(vNormal, vec3(0, 0, 1.0)), 2.0);
+                gl_FragColor = vec4(1.0, 0.35, 0.1, 1.0) * intensity * 0.7;
+            }
+        `,
+        blending: THREE.AdditiveBlending,
+        side: THREE.BackSide,
+        transparent: true
+    });
+    const moonHalo = new THREE.Mesh(haloGeometry, haloMaterial);
+    moonHalo.position.copy(moon.position);
+    scene.add(moonHalo);
+
+    // Starfield Particles with Orange/Cyan Sparks
+    const particlesCount = 1800;
     const particlesGeometry = new THREE.BufferGeometry();
     const particlesPositions = new Float32Array(particlesCount * 3);
     const particlesColors = new Float32Array(particlesCount * 3);
 
-    const colorOptions = [new THREE.Color(0x38bdf8), new THREE.Color(0x6366f1), new THREE.Color(0xffffff), new THREE.Color(0x06b6d4)];
+    const colorOptions = [
+        new THREE.Color(0xff5722), // Orange
+        new THREE.Color(0xff9800), // Amber
+        new THREE.Color(0x06b6d4), // Cyan
+        new THREE.Color(0xffffff), // White
+        new THREE.Color(0x818cf8)  // Indigo
+    ];
 
     for (let i = 0; i < particlesCount * 3; i += 3) {
-        particlesPositions[i] = (Math.random() - 0.5) * 60;
-        particlesPositions[i + 1] = (Math.random() - 0.5) * 60;
-        particlesPositions[i + 2] = (Math.random() - 0.5) * 60 - 10;
+        particlesPositions[i] = (Math.random() - 0.5) * 70;
+        particlesPositions[i + 1] = (Math.random() - 0.5) * 70;
+        particlesPositions[i + 2] = (Math.random() - 0.5) * 70 - 15;
 
         const col = colorOptions[Math.floor(Math.random() * colorOptions.length)];
         particlesColors[i] = col.r;
@@ -96,10 +129,10 @@ export function initSpaceBackground() {
     particlesGeometry.setAttribute('color', new THREE.BufferAttribute(particlesColors, 3));
 
     const particlesMaterial = new THREE.PointsMaterial({
-        size: 0.12,
+        size: 0.14,
         vertexColors: true,
         transparent: true,
-        opacity: 0.8,
+        opacity: 0.85,
         blending: THREE.AdditiveBlending
     });
 
@@ -120,9 +153,21 @@ export function initSpaceBackground() {
         gsap.registerPlugin(ScrollTrigger);
 
         gsap.to(moon.position, {
-            y: -5,
-            x: -4,
-            z: -8,
+            y: -5.5,
+            x: -4.5,
+            z: -9,
+            scrollTrigger: {
+                trigger: document.body,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1.5
+            }
+        });
+
+        gsap.to(moonHalo.position, {
+            y: -5.5,
+            x: -4.5,
+            z: -9,
             scrollTrigger: {
                 trigger: document.body,
                 start: 'top top',
@@ -152,10 +197,10 @@ export function initSpaceBackground() {
         const elapsedTime = clock.getElapsedTime();
 
         // Slow self-rotation of the moon
-        moon.rotation.y += 0.001;
+        moon.rotation.y += 0.0012;
 
         // Subtle floating of starfield
-        starfield.rotation.y = elapsedTime * 0.02;
+        starfield.rotation.y = elapsedTime * 0.015;
 
         // Smooth mouse parallax interpolation
         targetX += (mouseX - targetX) * 0.05;

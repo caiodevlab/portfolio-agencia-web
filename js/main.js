@@ -1,4 +1,3 @@
-import { initCalculator } from './calculator.js';
 import { initInteractions } from './interactions.js';
 import { initAnimations } from './animations.js';
 import { initSpaceBackground } from './space-background.js';
@@ -7,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initSpaceBackground();
     initAnimations();
     initInteractions();
-    initCalculator();
 
     // Scroll progress bar indicator
     const progressBar = document.createElement('div');

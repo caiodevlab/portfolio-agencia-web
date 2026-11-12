@@ -8,8 +8,8 @@ export const projectsData = [
         image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=700",
         description: "Portal corporativo e sistema de orçamentos instantâneos para engenharia térmica e climatização comercial de grande porte.",
         techs: ["React", "Vite", "Tailwind CSS", "Design System"],
-        liveUrl: "#",
-        demoUrl: "#"
+        liveUrl: "./projetos/hvac-demo/index.html",
+        demoUrl: "./projetos/hvac-demo/index.html"
     },
     {
         id: "solaris",
@@ -20,8 +20,8 @@ export const projectsData = [
         image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=700",
         description: "Site institucional focado em conversão para projetos fotovoltaicos comerciais, industriais e residenciais de alto padrão.",
         techs: ["HTML5", "Tailwind CSS", "Interactive ROI", "SEO Elite"],
-        liveUrl: "../projetos/institucional-solar/index.html",
-        demoUrl: "../projetos/institucional-solar/index.html"
+        liveUrl: "./projetos/institucional-solar/index.html",
+        demoUrl: "./projetos/institucional-solar/index.html"
     },
     {
         id: "radar",
@@ -29,11 +29,11 @@ export const projectsData = [
         category: "Landing Page",
         badge: "Alta Conversão",
         badgeColor: "bg-emerald-600",
-        image: "https://images.unsplash.com/photo-1506905925346-21b3cee2cb34?auto=format&fit=crop&q=80&w=700",
+        image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=700",
         description: "Página de alta conversão estruturada para captação de leads qualificados e redirecionamento automatizado para WhatsApp.",
         techs: ["Copywriting", "Direct WhatsApp", "Mobile First", "Fast Load"],
-        liveUrl: "../projetos/landing-whatsapp-viagens/index.html",
-        demoUrl: "../projetos/landing-whatsapp-viagens/index.html"
+        liveUrl: "./projetos/landing-whatsapp-viagens/index.html",
+        demoUrl: "./projetos/landing-whatsapp-viagens/index.html"
     },
     {
         id: "python",
@@ -44,8 +44,8 @@ export const projectsData = [
         image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=700",
         description: "Página de vendas profissional para lançamentos, cursos avançados e mentorias corporativas de tecnologia.",
         techs: ["Checkout Integrado", "Social Proof", "Responsive UI", "Animation"],
-        liveUrl: "../projetos/vendas-infoproduto/index.html",
-        demoUrl: "../projetos/vendas-infoproduto/index.html"
+        liveUrl: "./projetos/vendas-infoproduto/index.html",
+        demoUrl: "./projetos/vendas-infoproduto/index.html"
     },
     {
         id: "clinica",
@@ -56,8 +56,8 @@ export const projectsData = [
         image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=700",
         description: "Portal digital sofisticado para clínicas de estética com agendamento online e catálogo interativo de procedimentos.",
         techs: ["UI/UX Refinado", "Agendamento", "Tailwind", "Mobile Optimized"],
-        liveUrl: "../projetos/clinica-estetica/index.html",
-        demoUrl: "../projetos/clinica-estetica/index.html"
+        liveUrl: "./projetos/clinica-estetica/index.html",
+        demoUrl: "./projetos/clinica-estetica/index.html"
     },
     {
         id: "imobiliaria",
@@ -68,8 +68,8 @@ export const projectsData = [
         image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=700",
         description: "Plataforma imobiliária de alto padrão com busca avançada, galeria imersiva e captação direta de clientes VIP.",
         techs: ["Filtros Dinâmicos", "Galeria Imersiva", "Lead Capture", "Vite"],
-        liveUrl: "../projetos/imobiliaria-luxo/index.html",
-        demoUrl: "../projetos/imobiliaria-luxo/index.html"
+        liveUrl: "./projetos/imobiliaria-luxo/index.html",
+        demoUrl: "./projetos/imobiliaria-luxo/index.html"
     }
 ];
 
