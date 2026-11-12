@@ -141,3 +141,36 @@ code, pre, .font-mono {
 @media (max-width: 768px) {
     .cursor-dot, .cursor-ring { display: none !important; }
 }
+
+/* Floating WhatsApp Button for Mobile */
+.wa-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99;
+    background: #25d366;
+    color: #ffffff;
+    padding: 14px 20px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wa-float:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+    color: #ffffff;
+}
+
+@media (min-width: 769px) {
+    .wa-float {
+        bottom: 32px;
+        right: 32px;
+    }
+}
