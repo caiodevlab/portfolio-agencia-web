@@ -4,15 +4,28 @@ export function initInteractions() {
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 
     if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
+        const toggleMenu = () => {
             mobileMenu.classList.toggle('hidden');
-        });
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.classList.toggle('hidden');
+            }
+        };
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', toggleMenu);
+        }
 
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                if (mobileMenuOverlay) {
+                    mobileMenuOverlay.classList.add('hidden');
+                }
             });
         });
     }
